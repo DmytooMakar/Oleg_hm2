@@ -10,10 +10,10 @@ function SingleUser() {
         .then(res => res.json())
         .then(data =>setUser(data))
     }, [userId])
-    console.log(user)
+    console.log(userId)
     
     return (
-        <Table striped bordered hover>
+        <Table striped bordered hover>  
             <thead>
                 <tr>
                     <th>Id</th>
@@ -29,7 +29,7 @@ function SingleUser() {
                     <td>{user.name}</td>
                     <td>{user.username}</td>
                     <td>{user.email}</td>
-                    <td>{}</td>
+                    <td>{'Street: ' + user.address?.street + ' City: ' +user.address?.city}</td>
                 </tr>
             </tbody>
         </Table>

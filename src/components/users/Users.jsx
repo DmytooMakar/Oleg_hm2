@@ -8,19 +8,16 @@ function Users() {
     useEffect(()=>{
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(res => res.json())
-        .then(data => setUsers(data.map(user => {
-            return {
+        .then(data => setUsers(data.map(user => ({
                 id: user.id,
                 name: user.name,
                 username: user.username,
                 email: user.email,
                 address: 'City: '+user.address.city +' Street: '+ user.address.street
-        }})))
+        }))))
     }, [])
-    // console.log(users)
-     
 
-
+    
     return (
         <Table striped bordered hover>
             <thead>

@@ -10,7 +10,7 @@ function User({user}) {
                 <td>{user.username}</td>
                 <td>{user.email}</td>
                 <td>{user.address}</td>
-                <td><Link to={`/post/${user.id}`}>Post Info</Link></td>
+                <td><Link to={`/users/${user.id}/posts`}>Post Info</Link></td>
             </tr>
         </tbody>
     </>

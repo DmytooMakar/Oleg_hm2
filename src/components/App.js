@@ -2,7 +2,7 @@ import React from "react";
 import Users from "./users/Users";
 import Posts from "./posts/Posts";
 import SingleUser from "./posts/SingleUser"
-import SinglePost from "./users/SinglePost";
+import UserAndItsPosts from "./users/UserAndItsPosts";
 import {
   BrowserRouter as Router,
   Switch,
@@ -39,18 +39,23 @@ function App() {
           <Route exact path="/">
             <h1>Home</h1>
           </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/user/:userId">
+
+          <Route path="/posts/:userId">
             <SingleUser />
           </Route>
+
           <Route path="/posts">
             <Posts />
           </Route>
-          <Route path="/post/:postId">
-            <SinglePost />
+
+          <Route path="/users/:userIdAndPosts/posts">
+            <UserAndItsPosts />
           </Route>
+
+          <Route path="/users">
+            <Users />
+          </Route>
+
         </Switch>
       </div>
     </Router>
