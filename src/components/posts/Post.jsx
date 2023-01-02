@@ -8,7 +8,7 @@ function Post({post}) {
         <td>{post.userId}</td>
         <td>{post.title}</td>
         <td>{post.body}</td>
-        <td><Link to={`/posts/${post.userId}`}>User Info</Link></td>
+        <td><Link to={`/users/${post.userId}`}>User Info</Link></td>
     </tr>
 </tbody>
 }

@@ -3,6 +3,7 @@ import Users from "./users/Users";
 import Posts from "./posts/Posts";
 import SingleUser from "./posts/SingleUser"
 import UserAndItsPosts from "./users/UserAndItsPosts";
+import OnlyOnePost from "./users/OnlyOnePost";
 import {
   BrowserRouter as Router,
   Switch,
@@ -40,8 +41,8 @@ function App() {
             <h1>Home</h1>
           </Route>
 
-          <Route path="/posts/:userId">
-            <SingleUser />
+          <Route path="/posts/:postId">
+            <OnlyOnePost />
           </Route>
 
           <Route path="/posts">
@@ -50,6 +51,10 @@ function App() {
 
           <Route path="/users/:userIdAndPosts/posts">
             <UserAndItsPosts />
+          </Route>
+
+          <Route path="/users/:userId">
+            <SingleUser />
           </Route>
 
           <Route path="/users">
